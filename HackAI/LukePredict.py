@@ -54,13 +54,7 @@ rollingAverage2 = [np.mean(history2[i:i+rap]) for i in range(len(history2)-rap)]
 epoch = list(range(0,len(history1)))
 rollingEpochs = list(range(0,len(rollingAverage1)))
 
-# df1 = pd.DataFrame(history1)
-# havg1 = df1.rolling(window=7).mean()
-# df2 = pd.DataFrame(history2)
-# havg2 = df2.rolling(window=7).mean()
 
-# plt.plot(epoch[25:], history1[25:], label='loss')
-# plt.plot(epoch[25:], history2[25:], label='val_loss')
 plt.plot(rollingEpochs[25:], rollingAverage1[25:], label='loss')
 plt.plot(rollingEpochs[25:], rollingAverage2[25:], label='val_loss')
 plt.legend()
@@ -81,8 +75,6 @@ for i in range(len(rounded)):
         correct += 1
 
 print("Percentage correct guesses:   " + str(correct / len(Error)))
-# plt.hist(Error)
-# plt.hist(y*10)
-#plt.hist(Error+y*10)
+
 plt.show()
 
